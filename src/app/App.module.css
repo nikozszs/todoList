@@ -1,0 +1,13 @@
+.app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50%;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.text {
+    color: rgb(201, 194, 194);
+
+}
