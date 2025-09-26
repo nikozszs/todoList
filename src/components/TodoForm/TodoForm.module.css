@@ -1,12 +1,5 @@
-.form {
-
-}
-
 .inputContainer {
     display: flex;
     justify-content: center;
-}
-
-.input {
-
+    gap: 5px;
 }
