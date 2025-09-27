@@ -22,11 +22,11 @@ export default function App() {
                 <h1 className={styles.title}>To do list</h1>
             </header>
             <main className={styles.main}>
-                <TodoForm addTodo={handleAdd} />
+                <TodoForm onAddTodo={handleAdd} />
                 <TodoList todos={todos} onUpdateTodos={setTodos} />
             </main>
             <footer className={styles.footer}>
-                <p>Всего задач: {todos.length} </p>
+                <p className={styles.text}>Всего задач: {todos.length} </p>
             </footer>
         </div>
     )

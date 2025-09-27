@@ -9,7 +9,7 @@
 
 .title {
     color: rgb(201, 194, 194);
-    font-size: 28px;
+    font-size: 36px;
 }
 
 .main {
@@ -21,4 +21,9 @@
 .footer {
     display: flex;
     justify-content: center;
+}
+
+.text {
+    color: rgb(201, 194, 194);
+    font-size: 17px;
 }

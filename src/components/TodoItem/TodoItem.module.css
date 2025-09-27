@@ -1,0 +1,46 @@
+.todoItem {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 6px;
+    border: 1px solid rgb(201, 194, 194);
+    opacity: 0.9;
+    padding: 5px;
+}
+
+.todoContent {
+    display: flex;
+    gap: 10px;
+}
+
+.todoText {
+    color: rgb(77, 75, 75);
+    font-size: 17px;
+    padding-top: 6px;
+}
+
+.todoActions {
+    display: flex;
+    gap: 2px;
+}
+
+.button {
+    padding: 0 5px;
+    border: none;
+}
+
+.editContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.editInput{
+    border: none;
+}
+
+.editButtons {
+    display: flex;
+    gap: 5px;
+}

@@ -1,0 +1,38 @@
+.todoItems {
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+}
+
+.todoListEmpty {
+    color: rgb(201, 194, 194);
+    font-size: 17px;
+    text-align: center;
+}
+
+.todoContainer {
+    display: flex;
+    gap: 100px;
+}
+
+.todoList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.todoListHeader {
+    display: flex;
+    gap: 5px;
+}
+
+.filterButton {
+    color: rgb(141, 137, 137);;
+}
+
+.text {
+    color: rgb(201, 194, 194);
+    font-size: 17px;
+    margin: 0;
+}

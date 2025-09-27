@@ -1,6 +1,6 @@
 import { FilterType, ITodo } from "@/types";
 import { useState } from "react";
-import './TodoList.module.css';
+import styles from './TodoList.module.css';
 import { Button } from 'antd';
 import TodoItem from "../TodoItem/TodoItem";
 
@@ -44,55 +44,43 @@ export default function TodoList({todos, onUpdateTodos}: TodoListProps) {
 
     if (todos.length === 0) {
         return (
-            <div className="todo-list_empty">
+            <div className={styles.todoListEmpty}>
                 <p>Задач нет. Добавьте первую задачу</p>
             </div>
         )
     }
 
     return (
-        <section className="todo-list">
-            <div className="todo-list_header">
-                <div className="filters">
-                    <Button type="dashed" 
-                    className={`filter-button ${filter === 'all' ? "active" : ''}`}
-                    onClick={() => setFilter('all')} >
-                        Все ({todos.length})
-                    </Button>
-                    <Button type="dashed" 
-                    className={`filter-button ${filter === 'active' ? "active" : ''}`}
-                    onClick={() => setFilter('active')} >
-                        Активные ({activeCount})
-                    </Button>
-                    <Button type="dashed" 
-                    className={`filter-button ${filter === 'completed' ? "active" : ''}`}
-                    onClick={() => setFilter('completed')} >
-                        Выполненные ({completedCount})
-                    </Button>
-                </div>
+        <section className={styles.todoList}>
+            <div className={styles.todoListHeader}>
+                <Button type="dashed" 
+                className={`${styles.filterButton} ${filter === 'all' ? "active"  : ''}`}
+                onClick={() => setFilter('all')} >
+                    Все ({todos.length})
+                </Button>
+                <Button type="dashed" 
+                className={`${styles.filterButton} ${filter === 'active' ? "active" : ''}`}
+                onClick={() => setFilter('active')} >
+                    Активные ({activeCount})
+                </Button>
+                <Button type="dashed" 
+                className={`${styles.filterButton} ${filter === 'completed' ? "active" : ''}`}
+                onClick={() => setFilter('completed')} >
+                    Выполненные ({completedCount})
+                </Button>
             </div>
-            <div className="todo-items">
-                {filteredTodos.length === 0 ? (
-                    <div className="no-tasks">
-                        {filter === 'active' && 'Все задачи выполнены'}
-                        {filter === 'completed' && 'Задач нет'}
-                    </div>
-                ) : (
-                    filteredTodos.map(todo => (
+            <div className={styles.todoItems}>
+                {filteredTodos.map(todo => (
                         <TodoItem key={todo.id} 
                         todo={todo} 
                         onEdit={handleEdit}
                         onDelete={handleDelete}
                         onToggle={handleToggle} 
                         />
-                    ))
-                )}
+                ))}
             </div>
-            <div className="todo-list_footer">
-                <p> Осталось {activeCount} задач </p>
-                {completedCount > 0 && (
-                    <p> Выполненных задач: {completedCount} </p>
-                )}
+            <div className={styles.todoListFooter}>
+                <p className={styles.text}> Осталось задач: {activeCount} </p>
             </div>
         </section>
     )
