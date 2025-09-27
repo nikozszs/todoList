@@ -1,7 +1,7 @@
 import { ITodo } from "@/types";
 import { useState } from "react";
 import './TodoItem.module.css';
-import { Checkbox, Input } from 'antd';
+import { Button, Checkbox, Input } from 'antd';
 
 interface TodoItemProps {
     todo: ITodo;
@@ -39,12 +39,30 @@ export default function TodoItem({todo, onEdit, onDelete, onToggle}: TodoItemPro
         <div className={`todo-item ${todo.completed ? 'completed': ''}`}>
             <div className="todo-content">
                 <Checkbox checked={todo.completed} onChange={() => onToggle(todo.id)} />
-                {/* {isEditing ? (
+                {isEditing ? (
                     <div className="edit-container">
-                        <Input type="text" value={editText} onChange={(e) => setEditText(e.target.value)}/>
+                        <Input type="text" 
+                        value={editText} 
+                        onChange={(e) => setEditText(e.target.value)}/>
+                        <div className="edit-buttons">
+                            <Button className="save-button" onClick={handleSave}>✓</Button>
+                            <Button className="cancel-button" onClick={handleCancel}>✕</Button>
+                        </div>
                     </div>
-                ) : ()} */}
+                ) : (
+                    <>
+                        <span className="todo-text" onClick={() => setIsEditing(true)}>
+                            {todo.text}
+                        </span>
+                    </>
+                )}
             </div>
+            {!isEditing && (
+                <div className="todo-actions">
+                    <Button title="Редактировать" onClick={() => setIsEditing(true)} />
+                    <Button title="Удалить" onClick={() => onDelete(todo.id)} />
+                </div>
+            )}
         </div>
     )
 }

@@ -2,13 +2,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 50%;
     gap: 20px;
     flex-direction: column;
+    padding: 8rem 20px 0;
 }
 
 .title {
     color: rgb(201, 194, 194);
     font-size: 28px;
-    margin-bottom: 1px
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
 }
